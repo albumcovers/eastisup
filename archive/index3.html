@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kit-kat</title>
+    <link rel='stylesheet' href='{{ url_for("static", filename="style.css") }}'>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9058427264913946"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class='links'>
+            <a href='/'>
+                home
+            </a>
+            <a href='https://axolotl.wiki'>
+                blog
+            </a>
+            <a href='#projects'>
+                projects
+            </a>
+            <a href='#contact'>
+                contact
+            </a>
+        </div>
+    </nav>
+
+    <div class='content' style='overflow: auto;'>
+        <table>
+            <tr>
+                <th>
+                    <h1>hi, i'm <span class='name'>circle</span>.</h1>
+                    <span class='info'>
+                        my name's circle, and i own this domain because its a reference (it's a reference to twenty one pilots, the best band ever)
+                    </span>
+                </th>
+                <th>
+                    <img src='{{ url_for("static", filename="me_fr.jpg") }}'>
+                </th>
+            </tr>
+        </table>
+    </div>
+
+    <hr>
+
+    <div class='anything'>
+        
+        <h1 id='projects' name="projects">
+            here's a list of my dumb projects
+        </h1>
+
+        <img src='{{ url_for("static", filename="screenshots/ace.png") }}' width='500px' style='border-radius: 5px;'>
+        <br /><br/><br/>
+        <a href='https://ace.kxd.fm'>ace</a> - a file host<br/><br/><br/>
+        <img src='{{ url_for("static", filename="screenshots/pizza.png") }}' width='500px' style='border-radius: 5px;'>
+        <br /><br/><br/>
+        <a href='https://pizza.eastisup.com'>pizza</a> - fake domains for db practice (hint: use the key "eastisup")<br/><br/><br/>
+        <img src='{{ url_for("static", filename="screenshots/axolotl.png") }}' width='500px' style='border-radius: 5px;'>
+        <br /><br/><br/>
+        <a href='https://axolotl.wiki'>axolotl</a> - my dumb blog<br/><br/><br/>
+        <img src='{{ url_for("static", filename="screenshots/wacky.png") }}' width='500px' style='border-radius: 5px;'>
+        <br /><br/><br/>
+        <a href='https://wacky.lol'>wacky</a> - some stupid thing (dont use its broken)<br/><br/><br/>
+        <img src='{{ url_for("static", filename="screenshots/jewel.png") }}' width='500px' style='border-radius: 5px;'>
+        <br /><br/><br/>
+        <a href='https://jewel.lol'>jewel</a> - link shortner<br/><br/><br/><img src='{{ url_for("static", filename="screenshots/cyber.jpg") }}' width='500px' style='border-radius: 5px;'>
+        <br /><br/><br/>
+        <a href='https://disreality.xyz'>cyber [tv]</a> - watch some funny little videos<br/><br/>
+      click on the thing before the dash to visit the project btw
+    </div>
+
+    <hr>
+
+    <div class='contact' name='contact'>
+        <h1>
+            contact me (why?)
+        </h1>
+
+        <a href='mailto:hi@eastisup.com'>email</a><br/>
+        <a href='https://twit.rnj.app/user/static'>@static on my twitter clone  </a>
+    </div>
+  
+  <hr>
+
+  <div class='stats'>
+    <h1>
+      stats (what)
+    </h1>
+
+    as of right now, i have {{ get('https://api.rnj.app/api').text }} followers on replit, follow me now and it updates every 5 minutes -> <a href='https://replit.com/@JaxelTheAxel'>replit@jaxeltheaxel</a>.<br/><br/>
+
+              im listening to:
+          <br/><br/>
+          {{ get('https://spotify.octoberism.dev/api/title').text }} <br/> {{ get('https://spotify.octoberism.dev/api/artist').text }}<br/><br/>
+          {% if get('https://spotify.octoberism.dev/api/image').text.startswith('https://') %}
+          <img src="{{ get('https://spotify.octoberism.dev/api/image').text }}" width="250" style='border-radius: 5px;'>
+          {% endif %}
+
+    
+  </div>
+  
+</body>
+</html> 
