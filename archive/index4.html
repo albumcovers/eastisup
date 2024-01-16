@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@circle</title>
+
+    <style>
+        html {
+    padding: 30px;
+    color: #D8D5DB;
+    background: #040F16;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 100px;
+}
+
+.title {
+    font-size: 100px;
+    padding: 50px;
+}
+
+      img {
+        border-style: solid;
+        border-color: white;
+        border-weight: 1px;
+      }
+
+.circle {
+    color: #FFCA3A;
+}
+
+.no {
+    padding: 30px;
+}
+
+.spaces {
+    display: flex;
+    gap: 50px;
+}
+
+.player-controls {
+    text-align: right;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;  
+}
+
+img {
+    width: 300px;
+}
+
+a {
+    color: #FFD9CE;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #FFD9CE;
+}
+
+.selected {
+    text-decoration: underline;
+}
+
+.player-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.player .text-container {
+    display: flex;
+}
+
+.player img {
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+</style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href='/' class='selected'>
+            home
+        </a>
+
+        <a href='https://axolotl.wiki'>
+            blog
+        </a>
+
+        <a href='mailto:hi@eastisup.com'>
+            email
+        </a>
+    </nav>
+    <div class='spaces'>
+        <h1 class='title'>
+            hi, i'm<br/> 
+            <span class='circle'>circle</span>.
+        </h1>
+        <div class='player-wrapper'>
+              <div class='player'>
+                <img src="{{ get('https://nowplaying.jaxeltheaxel.repl.co/api/image').text }}">
+                <br/>
+                <div class='player-controls'>
+                    <b> {{ get('https://nowplaying.jaxeltheaxel.repl.co/api/title').text }} </b><br/>
+                    <span>{{ get('https://nowplaying.jaxeltheaxel.repl.co/api/artist').text }}</span>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class='about-me'>
+        hi, i'm circle. i like twenty one pilots, imagine dragons, and radiohead. i have 3 years of experience in python and node.js! the mini music player actually represents
+        what im listening to! i currently have {{ get('https://api.rnj.app/api').text }} followers on replit. follow me on <a href="https://replit.com/@jaxeltheaxel">replit</a>.
+    </div>
+</body>
+</html>
